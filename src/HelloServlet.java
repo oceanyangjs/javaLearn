@@ -30,8 +30,14 @@ public class HelloServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) {
 		try {
+			response.setContentType("text/html;charset=UTF-8");//设置响应格式
+			//设置不使用缓存
+			response.setDateHeader("Expires",0 );
+			response.setHeader("Cache-Controll","no-cache");
+			response.setHeader("pragma","no-cache");
+			
 			response.getWriter().println("<h1>hello servlet!!!!</h1>");
-			response.getWriter().println(new Date().toString());
+			response.getWriter().println(new Date().toString());		
 		}catch(IOException e){
 			e.printStackTrace();
 		}
