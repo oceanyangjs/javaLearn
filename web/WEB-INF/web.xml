@@ -33,4 +33,12 @@
 		<servlet-name>UploadPhotoServlet</servlet-name>
 		<url-pattern>/uploadPhoto</url-pattern>
 	</servlet-mapping>
+			<servlet>
+		<servlet-name>HeroListServlet</servlet-name>
+		<servlet-class>HeroListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HeroListServlet</servlet-name>
+		<url-pattern>/heroList</url-pattern>
+	</servlet-mapping>
 </web-app>
