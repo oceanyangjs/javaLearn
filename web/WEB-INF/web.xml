@@ -33,12 +33,44 @@
 		<servlet-name>UploadPhotoServlet</servlet-name>
 		<url-pattern>/uploadPhoto</url-pattern>
 	</servlet-mapping>
-			<servlet>
+	<servlet>
 		<servlet-name>HeroListServlet</servlet-name>
 		<servlet-class>HeroListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HeroListServlet</servlet-name>
 		<url-pattern>/heroList</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddHeroServlet</servlet-name>
+		<servlet-class>AddHeroServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddHeroServlet</servlet-name>
+		<url-pattern>/addHero</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DeleteHeroServlet</servlet-name>
+		<servlet-class>DeleteHeroServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteHeroServlet</servlet-name>
+		<url-pattern>/deleteHero</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditHeroServlet</servlet-name>
+		<servlet-class>EditHeroServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditHeroServlet</servlet-name>
+		<url-pattern>/editHero</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>UpdateHeroServlet</servlet-name>
+		<servlet-class>UpdateHeroServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateHeroServlet</servlet-name>
+		<url-pattern>/updateHero</url-pattern>
 	</servlet-mapping>
 </web-app>

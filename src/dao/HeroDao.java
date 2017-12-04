@@ -15,7 +15,7 @@ public class HeroDao {
 	
 	public HeroDao() {
 		try {
-			Class.forName("com.mysql.jdbc.driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException exception){
 			exception.printStackTrace();
 		}
@@ -23,7 +23,7 @@ public class HeroDao {
 	
 	//连接数据库
 	public Connection getConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc://mysql://127.0.0.1:3306/how2java?characterEncoding=UTF-8","root","000000");
+		return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/how2java?characterEncoding=UTF-8","root","000000");
 	}
 	
 	//具体的增删改查方法，单独对应
@@ -36,7 +36,6 @@ public class HeroDao {
 			while(rs.next()) {
 				total = rs.getInt(1);
 			}
-			System.out.println("total is :" + total);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -70,9 +69,9 @@ public class HeroDao {
 		String sql = "Update hero set name = ? ,hp = ?, damage = ? where id = ?";
 		try (Connection c = getConnection();PreparedStatement ps = c.prepareStatement(sql);){
 			ps.setString(1,hero.name );
-			ps.setFloat(1,hero.hp );
-			ps.setInt(1,hero.damage );
-			
+			ps.setFloat(2,hero.hp );
+			ps.setInt(3,hero.damage );
+			ps.setInt(4,hero.id);
 			ps.execute();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -93,9 +92,10 @@ public class HeroDao {
 	public Hero get(int id) {
 		Hero hero = null;
 		try(Connection connection = getConnection();Statement s = connection.createStatement();) {
-			String sql = "Select from hero where id = " + id;
+			String sql = "Select * from hero where id = " + id;
 			ResultSet rs = s.executeQuery(sql);
 			if(rs.next()) {
+				hero = new Hero();
 				String name = rs.getString(2);
 				float hp = rs.getFloat("hp");
 				int damage = rs.getInt(4);
@@ -103,6 +103,7 @@ public class HeroDao {
 				hero.name = name;
 				hero.hp = hp;
 				hero.damage = damage;
+				hero.id = id;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

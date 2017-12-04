@@ -1,8 +1,5 @@
-/HelloServlet.class
-/LoginServlet.class
-/RegisterServlet.class
-/UploadPhotoServlet.class
-/HeroDao.class
-/bean/
+/AddHeroServlet.class
 /dao/
-/HeroListServlet.class
+/DeleteHeroServlet.class
+/EditHeroServlet.class
+/UpdateHeroServlet.class
