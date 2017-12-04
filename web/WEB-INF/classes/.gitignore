@@ -1,5 +1,3 @@
-/AddHeroServlet.class
-/dao/
-/DeleteHeroServlet.class
-/EditHeroServlet.class
-/UpdateHeroServlet.class
+/bean/
+/GetOneServlet.class
+/GetManyServlet.class

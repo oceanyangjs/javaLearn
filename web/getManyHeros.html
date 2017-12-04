@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.min.js"></script>  
+</head>
+<body>
+	<input type="button" value="查看多个对象" id="sender"/><br>
+	
+	<div id="messageDiv"></div>
+	
+	
+	<script>
+	$('#sender').click(function(){
+		var url = "getManyServlet";
+		$.post(url,function(data){
+			var heros = $.parseJSON(data);
+			for(var i in heros){
+				var old = $("#messageDiv").html();
+				var hero = heros[i];
+				$("#messageDiv").html(old + "<br>" + hero.name + "----------" + hero.hp);
+			}
+		});
+	});
+	
+	</script>
+</body>
+</html>
