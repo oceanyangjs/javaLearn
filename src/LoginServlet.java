@@ -76,6 +76,8 @@ public class LoginServlet extends HttpServlet{
 		//以下为采用跳转的方式
 		response.setContentType("text/html; charset=UTF-8");
 		if("admin".equals(name)&&"123".equals(password)) {//成功采用的服务端跳转,页面地址不变
+			//将登陆的信息name存储在session中
+			request.getSession().setAttribute("userName", name);
 			request.getRequestDispatcher("success.html").forward(request,response);
 		}else {//失败采用的客户端跳转，页面地址会发生变化
 			response.sendRedirect("fail.html");

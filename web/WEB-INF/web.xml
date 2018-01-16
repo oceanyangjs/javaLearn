@@ -97,4 +97,12 @@
 		<servlet-name>GetManyServlet</servlet-name>
 		<url-pattern>/getManyServlet</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>HeroListMvcServlet</servlet-name>
+		<servlet-class>HeroListMvcServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HeroListMvcServlet</servlet-name>
+		<url-pattern>/heroListMvc</url-pattern>
+	</servlet-mapping>
 </web-app>
